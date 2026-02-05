@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Typography */
+  --font-sans: var(--font-cinzel), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-cinzel-decorative), serif;
+}
+
+:root {
+  /* Mosaic Theme (Dark Mode Default) */
+  --background: #511C6A;
+  /* Deep Purple */
+  --foreground: #EEB702;
+  /* Gold */
+
+  /* Primary: Deep Purple */
+  --primary: #511C6A;
+  --primary-foreground: #EEB702;
+
+  /* Secondary: Lavender/Light Purple for paragraphs */
+  --secondary: #BEABC8;
+  --secondary-foreground: #511C6A;
+
+  /* Accent: Gold */
+  --accent: #EEB702;
+  --accent-foreground: #511C6A;
+}
+
+/* Force Dark Mode aesthetic always, or handle light mode if needed */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Keeping the same identity even in light mode preference for now to match brand */
+    --background: #511C6A;
+    --foreground: #EEB702;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+p {
+  color: var(--secondary);
+}
