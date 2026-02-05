@@ -97,7 +97,7 @@ export default function EventsPage() {
             <Navbar />
 
             {/* Page Header */}
-            <section className="pt-32 pb-12 px-6 text-center bg-gradient-to-b from-primary/20 to-background">
+            <section className="pt-32 pb-12 px-6 text-center bg-background">
                 <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
                     Events
                 </h1>

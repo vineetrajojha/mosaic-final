@@ -14,13 +14,88 @@
   --color-accent-foreground: var(--accent-foreground);
 
   /* Typography */
-  --font-sans: var(--font-cinzel), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-cinzel-decorative), serif;
+  --font-sans: "Cinzel", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "CinzelDecorative", serif;
+  --font-logo: "HelloParisSans", sans-serif;
+  --font-irish: var(--font-irish-grover), cursive;
+}
+
+/* Hello Paris Sans */
+@font-face {
+  font-family: "HelloParisSans";
+  src: url("/font/Hello Paris-Font/Hello Paris Sans Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelloParisSans";
+  src: url("/font/Hello Paris-Font/Hello Paris Sans Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelloParisSans";
+  src: url("/font/Hello Paris-Font/Hello Paris Sans Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelloParisSans";
+  src: url("/font/Hello Paris-Font/Hello Paris Sans Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Cinzel Decorative */
+@font-face {
+  font-family: "CinzelDecorative";
+  src: url("/font/Cinzel_Decorative/CinzelDecorative-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CinzelDecorative";
+  src: url("/font/Cinzel_Decorative/CinzelDecorative-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CinzelDecorative";
+  src: url("/font/Cinzel_Decorative/CinzelDecorative-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Cinzel */
+@font-face {
+  font-family: "Cinzel";
+  src: url("/font/cinzel/Cinzel-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("/font/cinzel/Cinzel-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("/font/cinzel/Cinzel-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 
 :root {
   /* Mosaic Theme (Dark Mode Default) */
-  --background: #511C6A;
+  --background: linear-gradient(180deg, #531D6B 0%, #37144D 100%);
   /* Deep Purple */
   --foreground: #EEB702;
   /* Gold */
@@ -42,13 +117,14 @@
 @media (prefers-color-scheme: light) {
   :root {
     /* Keeping the same identity even in light mode preference for now to match brand */
-    --background: #511C6A;
+    --background: linear-gradient(180deg, #531D6B 0%, #37144D 100%);
     --foreground: #EEB702;
   }
 }
 
 body {
   background: var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -60,6 +136,10 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+}
+
+.font-logo {
+  font-family: var(--font-logo);
 }
 
 p {

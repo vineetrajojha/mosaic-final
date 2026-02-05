@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function CTA() {
     return (
-        <section className="py-32 px-6 text-center bg-gradient-to-b from-background to-primary/20 relative overflow-hidden">
+        <section className="py-32 px-6 text-center bg-background relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 to-transparent pointer-events-none" />
 
             <div className="max-w-3xl mx-auto relative z-10">

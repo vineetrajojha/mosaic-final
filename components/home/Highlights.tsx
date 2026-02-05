@@ -28,7 +28,7 @@ const highlights = [
 
 export default function Highlights() {
     return (
-        <section className="py-24 px-6 md:px-12 bg-background/50 relative">
+        <section className="py-24 px-6 md:px-12 bg-background relative">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">

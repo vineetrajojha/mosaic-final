@@ -10,7 +10,7 @@ export default function AboutPage() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 px-6 text-center bg-gradient-to-b from-primary/20 to-background relative overflow-hidden">
+            <section className="pt-32 pb-20 px-6 text-center bg-background relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1500&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
                 <div className="relative z-10 max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">

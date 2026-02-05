@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube, Mail, MapPin, Phone } 
 
 export default function Footer() {
     return (
-        <footer className="bg-black/40 border-t border-white/10 pt-16 pb-8 px-6 md:px-12 backdrop-blur-md">
+        <footer className="bg-background border-t border-white/10 pt-16 pb-8 px-6 md:px-12">
             <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
                 {/* Brand Column */}
                 <div>

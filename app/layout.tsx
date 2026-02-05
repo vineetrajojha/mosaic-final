@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Cinzel_Decorative } from "next/font/google";
+import { Cinzel, Cinzel_Decorative, Irish_Grover } from "next/font/google";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -10,6 +10,12 @@ const cinzel = Cinzel({
 const cinzelDecorative = Cinzel_Decorative({
   weight: ["400", "700", "900"],
   variable: "--font-cinzel-decorative",
+  subsets: ["latin"],
+});
+
+const irishGrover = Irish_Grover({
+  weight: "400",
+  variable: "--font-irish-grover",
   subsets: ["latin"],
 });
 
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} ${cinzelDecorative.variable} antialiased`}
+        className={`${cinzel.variable} ${cinzelDecorative.variable} ${irishGrover.variable} antialiased`}
       >
         {children}
       </body>
