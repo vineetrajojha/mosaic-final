@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, Users, Trophy } from "lucide-react";
+import Link from "next/link";
 
 // Dummy Data
 const eventsData = [
@@ -113,8 +114,8 @@ export default function EventsPage() {
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-6 py-2 rounded-full font-heading font-bold transition-all duration-300 ${activeCategory === category
-                                    ? "bg-accent text-accent-foreground scale-105 shadow-[0_0_15px_rgba(238,183,2,0.4)]"
-                                    : "bg-white/5 text-secondary hover:bg-white/10"
+                                ? "bg-accent text-accent-foreground scale-105 shadow-[0_0_15px_rgba(238,183,2,0.4)]"
+                                : "bg-white/5 text-secondary hover:bg-white/10"
                                 }`}
                         >
                             {category}
@@ -181,9 +182,11 @@ export default function EventsPage() {
                                     </div>
 
                                     <div className="flex gap-3">
-                                        <button className="flex-1 py-2 rounded-lg bg-accent text-accent-foreground font-bold hover:opacity-90 transition font-heading text-sm">
-                                            Register
-                                        </button>
+                                        <Link href="/register" className="flex-1">
+                                            <button className="w-full py-2 rounded-lg bg-accent text-accent-foreground font-bold hover:opacity-90 transition font-heading text-sm">
+                                                Register
+                                            </button>
+                                        </Link>
                                         <button className="flex-1 py-2 rounded-lg border border-white/20 text-white font-bold hover:bg-white/10 transition font-heading text-sm">
                                             Details
                                         </button>

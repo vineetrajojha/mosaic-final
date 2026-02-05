@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CTA() {
     return (
         <section className="py-32 px-6 text-center bg-gradient-to-b from-background to-primary/20 relative overflow-hidden">
@@ -10,9 +11,11 @@ export default function CTA() {
                 <p className="text-xl text-secondary font-sans mb-12">
                     Registration closes soon. Don't miss your chance to be part of the legacy.
                 </p>
-                <button className="px-12 py-5 rounded-full bg-accent text-accent-foreground text-xl font-heading font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(238,183,2,0.4)] transition-all duration-300">
-                    Register Now
-                </button>
+                <Link href="/register">
+                    <button className="px-12 py-5 rounded-full bg-accent text-accent-foreground text-xl font-heading font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(238,183,2,0.4)] transition-all duration-300">
+                        Register Now
+                    </button>
+                </Link>
             </div>
         </section>
     );
