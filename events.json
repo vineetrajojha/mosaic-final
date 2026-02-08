@@ -1,0 +1,96 @@
+{
+  "festival": "Mosaic 2026",
+  "schedule": {
+    "day1": "Artist",
+    "day2": "Artist",
+    "major_events": [
+      "Fashion Show",
+      "Singing",
+      "Dance",
+      "Battle of Bands"
+    ]
+  },
+  "events": [
+    {
+      "category": "Swarag",
+      "items": [
+        { "id": 1, "name": "Solo Singing", "fee": 300 },
+        { "id": 2, "name": "Group Singing", "fee": 900 },
+        { "id": 3, "name": "Battle of Bands", "fee": 1000 },
+        { "id": 4, "name": "Rap Battle", "fee": 300 },
+        { "id": 5, "name": "Beat Boxing", "fee": 300 },
+        { "id": 6, "name": "Instrumental Showdown", "fee": 300 }
+      ]
+    },
+    {
+      "category": "Aarambh Dance",
+      "items": [
+        { "id": 7, "name": "Western Solo", "fee": 250 },
+        { "id": 8, "name": "Western Group", "fee_per_person": 150 },
+        { "id": 9, "name": "Solo Classical", "fee": 250 },
+        { "id": 10, "name": "Group Classical", "fee_per_person": 150 }
+      ]
+    },
+    {
+      "category": "Campus Lens",
+      "items": [
+        { "id": 11, "name": "Reel-O-Holic", "fee": 250 },
+        { "id": 12, "name": "Shutter Showcase Photography", "fee": 300 },
+        {
+          "id": 13,
+          "name": "Cinematic (After Movie)",
+          "fee": 500,
+          "team_size": "3-4 members"
+        }
+      ]
+    },
+    {
+      "category": "Elegance",
+      "items": [
+        {
+          "id": 14,
+          "name": "Solera",
+          "fee": 150,
+          "participants": "10-25"
+        }
+      ]
+    },
+    {
+      "category": "Thespian Society",
+      "items": [
+        { "id": 15, "name": "Mono Acting", "fee": 300 },
+        {
+          "id": 16,
+          "name": "Nukkad Natak",
+          "fee": 1000,
+          "team_size": "5-8 members",
+          "note": "Genre Swap"
+        },
+        {
+          "id": 17,
+          "name": "Silent Acting",
+          "solo_fee": 300,
+          "group_fee": 1000,
+          "team_size": "5-8 members"
+        }
+      ]
+    },
+    {
+      "category": "Srijan Society",
+      "items": [
+        { "id": 18, "name": "Live Art Competition", "fee": 100 },
+        { "id": 19, "name": "Face Painting", "fee": 100 },
+        { "id": 20, "name": "Sculpt It Up", "fee": 100 }
+      ]
+    },
+    {
+      "category": "Literary & Media",
+      "items": [
+        { "id": 21, "name": "Extempore" },
+        { "id": 22, "name": "Debate" },
+        { "id": 23, "name": "Short Film Making" },
+        { "id": 24, "name": "Story Telling" }
+      ]
+    }
+  ]
+}

@@ -6,91 +6,48 @@ import Footer from "@/components/shared/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, Users, Trophy } from "lucide-react";
 import Link from "next/link";
+import eventsData from "@/events.json";
 
-// Dummy Data
-const eventsData = [
-    {
-        id: 1,
-        name: "Rhythm Divine",
-        category: "Dance",
-        date: "April 24",
-        time: "10:00 AM",
-        venue: "Main Auditorium",
-        image: "https://images.unsplash.com/photo-1545959570-a925b0ae8b74?q=80&w=600&auto=format&fit=crop",
-        prize: "₹15,000",
-        teamSize: "Group (6-12)",
-        description: "The ultimate group dance battle. Show off your synchronization and choreography.",
-    },
-    {
-        id: 2,
-        name: "Sargam",
-        category: "Music",
-        date: "April 25",
-        time: "2:00 PM",
-        venue: "Open Air Theatre",
-        image: "https://images.unsplash.com/photo-1514525253440-b393452e3383?q=80&w=600&auto=format&fit=crop",
-        prize: "₹10,000",
-        teamSize: "Solo/Duet",
-        description: "A soulful singing competition for eastern and western vocals.",
-    },
-    {
-        id: 3,
-        name: "Curtain Call",
-        category: "Drama",
-        date: "April 26",
-        time: "11:00 AM",
-        venue: "Mini Auditorium",
-        image: "https://images.unsplash.com/photo-1503095392269-27528ca388ec?q=80&w=600&auto=format&fit=crop",
-        prize: "₹20,000",
-        teamSize: "Group (5-10)",
-        description: "Stage play competition. drama, expressions and storytelling at its best.",
-    },
-    {
-        id: 4,
-        name: "Brush Strokes",
-        category: "Art",
-        date: "April 24",
-        time: "11:00 AM",
-        venue: "Art Gallery",
-        image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=600&auto=format&fit=crop",
-        prize: "₹5,000",
-        teamSize: "Solo",
-        description: "Live painting competition. Theme will be given on spot.",
-    },
-    {
-        id: 5,
-        name: "Battle of Bands",
-        category: "Music",
-        date: "April 26",
-        time: "5:00 PM",
-        venue: "Main Stage",
-        image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=600&auto=format&fit=crop",
-        prize: "₹25,000",
-        teamSize: "Band (3-8)",
-        description: "The flagship event. Rock the stage with your band's original compositions.",
-    },
-    {
-        id: 6,
-        name: "Verse War",
-        category: "Literary",
-        date: "April 25",
-        time: "10:00 AM",
-        venue: "Seminar Hall",
-        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop",
-        prize: "₹3,000",
-        teamSize: "Solo",
-        description: "Poetry slam competition. Express your thoughts in verse.",
-    },
-];
+// Types
+interface EventItem {
+    id: number;
+    name: string;
+    description: string;
+    fee: number | string;
+    teamSize: string;
+    image: string;
+    category: string;
+    date: string;
+    time: string;
+    venue: string;
+    prize: string;
+}
 
-const categories = ["All", "Dance", "Music", "Drama", "Art", "Literary", "Sports"];
+// Process events data
+const allEvents: EventItem[] = eventsData.events.flatMap((categoryGroup) =>
+    categoryGroup.items.map((item: any) => ({
+        id: item.id,
+        name: item.name,
+        description: item.note || `Experience the thrill of ${item.name} at Mosaic 2026!`,
+        fee: item.fee || item.fee_per_person || (item.solo_fee ? `Solo: ${item.solo_fee}, Group: ${item.group_fee}` : "Free"),
+        teamSize: item.team_size || item.participants || (item.fee_per_person ? "Per Person" : "Individual/Group"),
+        image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop", // Default placeholder
+        category: categoryGroup.category,
+        date: "TBA",
+        time: "TBA",
+        venue: "TBA",
+        prize: "TBA",
+    }))
+);
+
+const categories = ["All", ...eventsData.events.map((group) => group.category)];
 
 export default function EventsPage() {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredEvents = activeCategory === "All"
-        ? eventsData
-        : eventsData.filter(event => event.category === activeCategory);
+        ? allEvents
+        : allEvents.filter((event) => event.category === activeCategory);
 
     return (
         <main className="min-h-screen bg-background text-foreground">
@@ -177,7 +134,7 @@ export default function EventsPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Trophy size={16} className="text-accent" />
-                                            <span>Prize: {event.prize}</span>
+                                            <span>Fee: {typeof event.fee === 'number' ? `₹${event.fee}` : event.fee}</span>
                                         </div>
                                     </div>
 
