@@ -27,7 +27,7 @@ export default function Footer() {
                         <li><Link href="/" className="hover:text-accent transition">Home</Link></li>
                         <li><Link href="/events" className="hover:text-accent transition">Events</Link></li>
                         <li><Link href="/about" className="hover:text-accent transition">About Us</Link></li>
-                        <li><Link href="/team" className="hover:text-accent transition">Our Team</Link></li>
+
                         <li><Link href="/gallery" className="hover:text-accent transition">Gallery</Link></li>
                         <li><Link href="/contact" className="hover:text-accent transition">Contact</Link></li>
                     </ul>

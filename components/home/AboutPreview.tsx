@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
     { label: "Days of Celebration", value: 3 },
-    { label: "Events", value: 35 },
+    { label: "Events", value: 24 },
     { label: "Participating Colleges", value: 50 },
     { label: "Footfall", value: "5000+" },
 ];

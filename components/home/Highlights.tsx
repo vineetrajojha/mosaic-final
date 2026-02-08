@@ -17,12 +17,12 @@ const highlights = [
     {
         icon: <Trophy className="w-8 h-8 text-accent" />,
         title: "Flagship Events",
-        description: "High-stakes competitions with massive prize pools.",
+        description: "High-stakes competitions like Solera (Fashion Show) and Battle of Bands.",
     },
     {
         icon: <Mic2 className="w-8 h-8 text-accent" />,
-        title: "Open Mic",
-        description: "A platform for poets, comedians, and storytellers.",
+        title: "Literary & Arts",
+        description: "Showcase your talent in Poetry, Story Telling, and Live Art.",
     },
 ];
 

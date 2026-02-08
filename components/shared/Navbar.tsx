@@ -10,14 +10,38 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "Events", href: "/events" },
     { name: "About", href: "/about" },
-    { name: "Team", href: "/team" },
+
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 10;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [scrolled]);
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 py-6">
+        <nav
+            className={cn(
+                "fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300",
+                scrolled
+                    ? "bg-[#531D6B] shadow-sm py-8 border-b border-white/5"
+                    : "bg-transparent"
+            )}
+        >
             <div className="max-w-7xl mx-auto flex items-center justify-center">
                 {/* Desktop Navigation - Centered */}
                 <div className="hidden md:flex items-center gap-12">
@@ -30,6 +54,16 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
+                </div>
+
+                {/* Register Button (Desktop) */}
+                <div className="hidden md:block absolute right-6">
+                    <Link
+                        href="/register"
+                        className="bg-[#EEB702] text-[#511C6A] font-heading font-bold text-lg px-6 py-2 rounded-lg border-2 border-[#511C6A] shadow-md hover:scale-105 transition-transform"
+                    >
+                        REGISTER NOW
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button (kept for mobile responsiveness, though layout implies desktop primarily) */}
@@ -72,6 +106,15 @@ function MobileMenu() {
                                     {link.name}
                                 </Link>
                             ))}
+                        </div>
+                        <div className="mt-6 flex justify-center">
+                            <Link
+                                href="/register"
+                                className="bg-[#EEB702] text-[#511C6A] font-heading font-bold text-lg px-6 py-2 rounded-lg border-2 border-[#511C6A] shadow-md hover:scale-105 transition-transform"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                REGISTER NOW
+                            </Link>
                         </div>
                     </motion.div>
                 )}

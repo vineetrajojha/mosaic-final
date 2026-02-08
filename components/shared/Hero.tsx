@@ -11,8 +11,6 @@ export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const ovalRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
-    const flowerTopLeftRef = useRef<HTMLImageElement>(null);
-    const flowerBottomRightRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -30,14 +28,7 @@ export default function Hero() {
                     opacity: 0,
                     duration: 1,
                     ease: "power3.out",
-                }, "-=0.8")
-                .from([flowerTopLeftRef.current, flowerBottomRightRef.current], {
-                    opacity: 0,
-                    scale: 0.8,
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: "power2.out"
-                }, "-=1");
+                }, "-=0.8");
 
             // Parallax effect
             gsap.to(ovalRef.current, {
@@ -59,23 +50,6 @@ export default function Hero() {
             ref={containerRef}
             className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-background"
         >
-            {/* Decorative Flowers */}
-            <div className="absolute top-0 left-0 w-32 md:w-48 lg:w-64 z-10">
-                <img
-                    ref={flowerTopLeftRef}
-                    src="/decorative-flower.svg"
-                    alt="Decorative Flower"
-                    className="w-full h-auto opacity-90"
-                />
-            </div>
-            <div className="absolute bottom-0 right-0 w-32 md:w-48 lg:w-64 z-10 rotate-180">
-                <img
-                    ref={flowerBottomRightRef}
-                    src="/decorative-flower.svg"
-                    alt="Decorative Flower"
-                    className="w-full h-auto opacity-90"
-                />
-            </div>
 
             {/* Content */}
             <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">

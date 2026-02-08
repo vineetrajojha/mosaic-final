@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 // Placeholder logos (using text or simple shapes for now if no images available)
 const sponsors = [
-    "TechCorp", "SoundWave", "FashionHub", "EnergyDrink", "BankOfYouth", "MediaPartner", "Foodie"
+    "Sponsors", "Sponsors", "Sponsors", "Sponsors", "Sponsors", "Sponsors", "Sponsors"
 ];
 
 export default function Sponsors() {

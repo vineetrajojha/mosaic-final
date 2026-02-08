@@ -7,13 +7,13 @@ const days = [
         day: "Day 1",
         date: "April 24",
         title: "The Grand Opening",
-        description: "Inauguration ceremony followed by solo dance and drama competitions.",
+        description: "Inauguration followed by Aarambh (Dance) and Thespian (Drama) competitions. ",
     },
     {
         day: "Day 2",
         date: "April 25",
         title: "Rhythm & Beats",
-        description: "Battle of Bands, Singing showdowns, and the Fashion Show.",
+        description: "Battle of Bands, Swarag (Singing), and Solera (Fashion Show).",
     },
     {
         day: "Day 3",

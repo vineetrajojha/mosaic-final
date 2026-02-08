@@ -8,24 +8,24 @@ import { motion } from "framer-motion";
 const events = [
     {
         id: 1,
-        name: "Rhythm Divine",
-        category: "Dance",
-        date: "April 24",
-        image: "https://images.unsplash.com/photo-1545959570-a925b0ae8b74?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-        id: 2,
-        name: "Sargam",
+        name: "Battle of Bands",
         category: "Music",
         date: "April 25",
         image: "https://images.unsplash.com/photo-1514525253440-b393452e3383?q=80&w=600&auto=format&fit=crop",
     },
     {
+        id: 2,
+        name: "Solera (Fashion Show)",
+        category: "Lifestyle",
+        date: "April 25",
+        image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=600&auto=format&fit=crop",
+    },
+    {
         id: 3,
-        name: "Curtain Call",
-        category: "Drama",
-        date: "April 26",
-        image: "https://images.unsplash.com/photo-1503095392269-27528ca388ec?q=80&w=600&auto=format&fit=crop",
+        name: "Group Dance (Western)",
+        category: "Dance",
+        date: "April 24",
+        image: "https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&w=600&auto=format&fit=crop",
     },
 ];
 
