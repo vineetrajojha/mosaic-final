@@ -2,8 +2,7 @@ import Navbar from "@/components/shared/Navbar";
 import Hero from "@/components/shared/Hero";
 import AboutPreview from "@/components/home/AboutPreview";
 import Highlights from "@/components/home/Highlights";
-import EventsPreview from "@/components/home/EventsPreview";
-import Timeline from "@/components/home/Timeline";
+
 import Sponsors from "@/components/home/Sponsors";
 import CTA from "@/components/home/CTA";
 import Footer from "@/components/shared/Footer";
@@ -17,8 +16,7 @@ export default function Home() {
       <Hero />
       <AboutPreview />
       <Highlights />
-      <EventsPreview />
-      <Timeline />
+
       <Sponsors />
       <CTA />
       <Footer />

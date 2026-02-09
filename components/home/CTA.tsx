@@ -11,7 +11,7 @@ export default function CTA() {
                 <p className="text-xl text-secondary font-sans mb-12">
                     Registration closes soon. Don't miss your chance to be part of the legacy.
                 </p>
-                <Link href="/register">
+                <Link href="/events">
                     <button className="px-12 py-5 rounded-full bg-accent text-accent-foreground text-xl font-heading font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(238,183,2,0.4)] transition-all duration-300">
                         Register Now
                     </button>

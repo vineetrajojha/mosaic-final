@@ -37,12 +37,12 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-heading font-bold text-foreground mb-6">Categories</h3>
                     <ul className="space-y-3 font-sans text-secondary">
-                        <li><Link href="/events?category=dance" className="hover:text-accent transition">Dance</Link></li>
-                        <li><Link href="/events?category=music" className="hover:text-accent transition">Music</Link></li>
-                        <li><Link href="/events?category=drama" className="hover:text-accent transition">Drama</Link></li>
-                        <li><Link href="/events?category=art" className="hover:text-accent transition">Fine Arts</Link></li>
-                        <li><Link href="/events?category=literary" className="hover:text-accent transition">Literary</Link></li>
-                        <li><Link href="/events?category=sports" className="hover:text-accent transition">Sports/Fun</Link></li>
+                        <li><Link href="/events?category=swarag" className="hover:text-accent transition">Swarag</Link></li>
+                        <li><Link href="/events?category=aarambh" className="hover:text-accent transition">Aarambh Dance</Link></li>
+                        <li><Link href="/events?category=elegance" className="hover:text-accent transition">Elegance</Link></li>
+                        <li><Link href="/events?category=thespian" className="hover:text-accent transition">Thespian Society</Link></li>
+                        <li><Link href="/events?category=srijan" className="hover:text-accent transition">Srijan Society</Link></li>
+                        <li><Link href="/events?category=literary" className="hover:text-accent transition">Literary & Media</Link></li>
                     </ul>
                 </div>
 
@@ -52,15 +52,15 @@ export default function Footer() {
                     <ul className="space-y-4 font-sans text-secondary">
                         <li className="flex gap-3 items-start">
                             <MapPin size={20} className="text-accent shrink-0" />
-                            <span>University Campus, Main Auditorium Block, City, State 123456</span>
+                            <span>IILM University, 16, Knowledge Park II, Greater Noida, Uttar Pradesh 201306</span>
                         </li>
                         <li className="flex gap-3 items-center">
                             <Phone size={20} className="text-accent shrink-0" />
-                            <span>+91 98765 43210</span>
+                            <span>+91 79053 02110 (Aviral Srivastava)</span>
                         </li>
                         <li className="flex gap-3 items-center">
                             <Mail size={20} className="text-accent shrink-0" />
-                            <span>mosaic@university.edu</span>
+                            <span>mosaic@iilm.edu</span>
                         </li>
                     </ul>
                 </div>

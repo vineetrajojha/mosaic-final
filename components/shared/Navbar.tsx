@@ -59,7 +59,7 @@ export default function Navbar() {
                 {/* Register Button (Desktop) */}
                 <div className="hidden md:block absolute right-6">
                     <Link
-                        href="/register"
+                        href="/events"
                         className="bg-[#EEB702] text-[#511C6A] font-heading font-bold text-lg px-6 py-2 rounded-lg border-2 border-[#511C6A] shadow-md hover:scale-105 transition-transform"
                     >
                         REGISTER NOW

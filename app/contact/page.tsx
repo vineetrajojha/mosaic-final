@@ -27,18 +27,18 @@ export default function ContactPage() {
                             <li className="flex gap-4 items-start">
                                 <MapPin className="text-accent shrink-0" size={24} />
                                 <span className="text-secondary font-sans text-lg">
-                                    Mosaic Cultural Fest<br />
-                                    University Campus, Main Block<br />
-                                    New Delhi, India 110001
+                                    IILM University<br />
+                                    16, Knowledge Park II<br />
+                                    Greater Noida, Uttar Pradesh 201306
                                 </span>
                             </li>
                             <li className="flex gap-4 items-center">
                                 <Phone className="text-accent shrink-0" size={24} />
-                                <span className="text-secondary font-sans text-lg">+91 98765 43210</span>
+                                <span className="text-secondary font-sans text-lg">+91 79053 02110 (Aviral Srivastava)</span>
                             </li>
                             <li className="flex gap-4 items-center">
                                 <Mail className="text-accent shrink-0" size={24} />
-                                <span className="text-secondary font-sans text-lg">contact@mosaic2026.com</span>
+                                <span className="text-secondary font-sans text-lg">mosaic@iilm.edu</span>
                             </li>
                         </ul>
                     </div>

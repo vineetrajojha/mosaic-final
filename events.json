@@ -14,33 +14,93 @@
     {
       "category": "Swarag",
       "items": [
-        { "id": 1, "name": "Solo Singing", "fee": 300 },
-        { "id": 2, "name": "Group Singing", "fee": 900 },
-        { "id": 3, "name": "Battle of Bands", "fee": 1000 },
-        { "id": 4, "name": "Rap Battle", "fee": 300 },
-        { "id": 5, "name": "Beat Boxing", "fee": 300 },
-        { "id": 6, "name": "Instrumental Showdown", "fee": 300 }
+        {
+          "id": 1,
+          "name": "Solo Singing",
+          "participants": "Solo",
+          "fee": "300/-"
+        },
+        {
+          "id": 2,
+          "name": "Group Singing",
+          "participants": "4-8",
+          "fee": "900/-"
+        },
+        {
+          "id": 3,
+          "name": "Rap Battle",
+          "participants": "Solo",
+          "fee": "300/-"
+        },
+        {
+          "id": 4,
+          "name": "Beat Boxing",
+          "participants": "Solo",
+          "fee": "300/-"
+        },
+        {
+          "id": 5,
+          "name": "Battle of Bands",
+          "participants": "Band",
+          "fee": "1500/-"
+        },
+        {
+          "id": 6,
+          "name": "Instrumental Showdown",
+          "participants": "Solo",
+          "fee": "300/-"
+        }
       ]
     },
     {
       "category": "Aarambh Dance",
       "items": [
-        { "id": 7, "name": "Western Solo", "fee": 250 },
-        { "id": 8, "name": "Western Group", "fee_per_person": 150 },
-        { "id": 9, "name": "Solo Classical", "fee": 250 },
-        { "id": 10, "name": "Group Classical", "fee_per_person": 150 }
+        {
+          "id": 7,
+          "name": "Western Solo Dance",
+          "participants": "Solo",
+          "fee": "250/-"
+        },
+        {
+          "id": 8,
+          "name": "Western Group Dance",
+          "participants": "5-15",
+          "fee": "150/- per member"
+        },
+        {
+          "id": 9,
+          "name": "Classical solo Dance",
+          "participants": "Solo",
+          "fee": "250/-"
+        },
+        {
+          "id": 10,
+          "name": "Classical Group Dance",
+          "participants": "5-15",
+          "fee": "150/- per member"
+        }
       ]
     },
     {
       "category": "Campus Lens",
       "items": [
-        { "id": 11, "name": "Reel-O-Holic", "fee": 250 },
-        { "id": 12, "name": "Shutter Showcase Photography", "fee": 300 },
+        {
+          "id": 11,
+          "name": "Reel-O-Holic",
+          "participants": "Solo",
+          "fee": "250/-"
+        },
+        {
+          "id": 12,
+          "name": "Shutter showcase",
+          "participants": "Solo",
+          "fee": "300/-"
+        },
         {
           "id": 13,
-          "name": "Cinematic (After Movie)",
-          "fee": 500,
-          "team_size": "3-4 members"
+          "name": "Cinemagic",
+          "participants": "3-4",
+          "fee": "500/-"
         }
       ]
     },
@@ -49,47 +109,79 @@
       "items": [
         {
           "id": 14,
-          "name": "Solera",
-          "fee": 150,
-          "participants": "10-25"
+          "name": "Solera ( Fashion Walk )",
+          "participants": "10-25",
+          "fee": "3000/- per Team"
         }
       ]
     },
     {
       "category": "Thespian Society",
       "items": [
-        { "id": 15, "name": "Mono Acting", "fee": 300 },
+        {
+          "id": 15,
+          "name": "Mono acting",
+          "participants": "Solo",
+          "fee": "300/-"
+        },
         {
           "id": 16,
           "name": "Nukkad Natak",
-          "fee": 1000,
-          "team_size": "5-8 members",
-          "note": "Genre Swap"
+          "participants": "5-8",
+          "fee": "1000/-"
         },
         {
           "id": 17,
           "name": "Silent Acting",
-          "solo_fee": 300,
-          "group_fee": 1000,
-          "team_size": "5-8 members"
+          "participants": "5-8",
+          "fee": "Solo - 300/-"
         }
       ]
     },
     {
       "category": "Srijan Society",
       "items": [
-        { "id": 18, "name": "Live Art Competition", "fee": 100 },
-        { "id": 19, "name": "Face Painting", "fee": 100 },
-        { "id": 20, "name": "Sculpt It Up", "fee": 100 }
+        {
+          "id": 18,
+          "name": "Live Art",
+          "participants": "Solo",
+          "fee": "100/-"
+        },
+        {
+          "id": 19,
+          "name": "Sculpt it up",
+          "participants": "Solo",
+          "fee": "100/-"
+        },
+        {
+          "id": 20,
+          "name": "Face painting",
+          "participants": "Solo",
+          "fee": "100/-"
+        }
       ]
     },
     {
       "category": "Literary & Media",
       "items": [
-        { "id": 21, "name": "Extempore" },
-        { "id": 22, "name": "Debate" },
-        { "id": 23, "name": "Short Film Making" },
-        { "id": 24, "name": "Story Telling" }
+        {
+          "id": 21,
+          "name": "Story telling",
+          "participants": "Solo",
+          "fee": "100/-"
+        },
+        {
+          "id": 22,
+          "name": "Extempore",
+          "participants": "Solo",
+          "fee": "150/-"
+        },
+        {
+          "id": 23,
+          "name": "Debate",
+          "participants": "2-4",
+          "fee": "100/- per student"
+        }
       ]
     }
   ]
