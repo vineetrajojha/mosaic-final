@@ -43,40 +43,24 @@ export default function Loader() {
             {/* Left Panel */}
             <div
                 ref={leftPanelRef}
-                className="relative w-1/2 h-full flex items-center justify-end"
+                className="relative w-1/2 h-full bg-background flex items-center justify-end overflow-hidden border-r border-white/10"
             >
-                {/* Background */}
                 <img
-                    src="/left-loaderbg.svg"
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-
-                {/* Decorative Element */}
-                <img
-                    src="/left-loader.svg"
+                    src="/loader-left.png"
                     alt="Loading..."
-                    className="relative z-10 h-[40vh] md:h-[60vh] w-auto object-contain translate-x-[1px]"
+                    className="w-full h-full object-cover object-right"
                 />
             </div>
 
             {/* Right Panel */}
             <div
                 ref={rightPanelRef}
-                className="relative w-1/2 h-full flex items-center justify-start"
+                className="relative w-1/2 h-full bg-background flex items-center justify-start overflow-hidden border-l border-white/10"
             >
-                {/* Background */}
                 <img
-                    src="/right-loaderbg.svg"
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-
-                {/* Decorative Element */}
-                <img
-                    src="/right-loader.svg"
+                    src="/loader-right.png"
                     alt="Loading..."
-                    className="relative z-10 h-[40vh] md:h-[60vh] w-auto object-contain -translate-x-[1px]"
+                    className="w-full h-full object-cover object-left"
                 />
             </div>
         </div>

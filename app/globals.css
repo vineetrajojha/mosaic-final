@@ -123,7 +123,10 @@
 }
 
 body {
-  background: var(--background);
+  background: url('/bg.svg'), var(--background);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -144,4 +147,18 @@ h6 {
 
 p {
   color: var(--secondary);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }

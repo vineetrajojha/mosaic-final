@@ -21,7 +21,7 @@ const irishGrover = Irish_Grover({
 
 export const metadata: Metadata = {
   title: "MOSAIC 2026",
-  description: "University Cultural Event",
+  description: "IILM University Cultural Event",
 };
 
 export default function RootLayout({
@@ -34,18 +34,18 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${cinzelDecorative.variable} ${irishGrover.variable} antialiased`}
       >
-        <div className="fixed top-0 left-0 w-32 md:w-48 lg:w-64 z-[60] pointer-events-none">
+        <div className="fixed -top-10 -left-10 w-64 md:w-80 lg:w-96 z-[60] pointer-events-none -translate-x-1/3 -translate-y-1/3">
           <img
             src="/decorative-flower.svg"
             alt=""
-            className="w-full h-auto opacity-90"
+            className="w-full h-auto opacity-90 animate-spin-slow"
           />
         </div>
-        <div className="fixed bottom-0 right-0 w-32 md:w-48 lg:w-64 z-40 pointer-events-none rotate-180">
+        <div className="fixed -bottom-10 -right-10 w-64 md:w-80 lg:w-96 z-40 pointer-events-none translate-x-1/3 translate-y-1/3 rotate-180">
           <img
             src="/decorative-flower.svg"
             alt=""
-            className="w-full h-auto opacity-90"
+            className="w-full h-auto opacity-90 animate-spin-slow"
           />
         </div>
         {children}

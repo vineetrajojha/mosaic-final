@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import { User, Mail, Phone, School, ArrowRight, Upload, qrCode, CreditCard, Users, QrCode } from "lucide-react";
+import { User, Mail, Phone, School, ArrowRight, Upload, CreditCard, Users, QrCode } from "lucide-react";
 import Link from "next/link";
 import eventsData from "../../events.json";
 import { supabase } from "@/lib/supabaseClient";

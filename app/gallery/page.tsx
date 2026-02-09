@@ -5,13 +5,17 @@ import Footer from "@/components/shared/Footer";
 import { motion } from "framer-motion";
 
 const images = [
-    { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop", span: "row-span-1" },
-    { src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=600&auto=format&fit=crop", span: "row-span-2" },
-    { src: "https://images.unsplash.com/photo-1545959570-a925b0ae8b74?q=80&w=600&auto=format&fit=crop", span: "row-span-1" },
-    { src: "https://images.unsplash.com/photo-1514525253440-b393452e3383?q=80&w=600&auto=format&fit=crop", span: "row-span-2" },
-    { src: "https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600&auto=format&fit=crop", span: "row-span-1" },
-    { src: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=600&auto=format&fit=crop", span: "row-span-1" },
-    { src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop", span: "row-span-1" },
+    { src: "/gallery/PHOTO-2026-02-09-22-42-58.jpg", span: "row-span-1" },
+    { src: "/gallery/PHOTO-2026-02-09-22-42-59 2.jpg", span: "row-span-2" },
+    { src: "/gallery/PHOTO-2026-02-09-22-42-59 3.jpg", span: "row-span-1" },
+    { src: "/gallery/PHOTO-2026-02-09-22-42-59.jpg", span: "row-span-1" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.56.jpeg", span: "row-span-2" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.57 (1).jpeg", span: "row-span-1" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.57 (2).jpeg", span: "row-span-1" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.57 (3).jpeg", span: "row-span-1" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.57.jpeg", span: "row-span-2" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.58 (1).jpeg", span: "row-span-1" },
+    { src: "/gallery/WhatsApp Image 2026-02-09 at 22.42.58.jpeg", span: "row-span-1" },
 ];
 
 export default function GalleryPage() {
@@ -23,9 +27,6 @@ export default function GalleryPage() {
                 <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
                     Gallery
                 </h1>
-                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto">
-                    Glimpses of the unforgettable moments from past years.
-                </p>
             </section>
 
             {/* Masonry Grid */}
@@ -47,22 +48,6 @@ export default function GalleryPage() {
                             />
                         </motion.div>
                     ))}
-                </div>
-            </section>
-
-            {/* Video Section */}
-            <section className="px-6 md:px-12 pb-24 max-w-7xl mx-auto">
-                <h2 className="text-4xl font-heading font-bold text-foreground mb-8 text-center">Highlights</h2>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=mute=1"
-                        title="Mosaic Highlights"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                    ></iframe>
                 </div>
             </section>
 
