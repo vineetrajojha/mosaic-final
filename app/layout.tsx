@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${cinzelDecorative.variable} ${irishGrover.variable} antialiased`}
       >
-        <div className="fixed -top-10 -left-10 w-64 md:w-80 lg:w-96 z-[60] pointer-events-none -translate-x-1/3 -translate-y-1/3">
+        <div className="fixed -bottom-10 -left-10 w-64 md:w-80 lg:w-96 z-[60] pointer-events-none -translate-x-1/3 translate-y-1/3">
           <img
             src="/decorative-flower.svg"
             alt=""

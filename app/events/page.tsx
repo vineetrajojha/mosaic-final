@@ -54,13 +54,18 @@ export default function EventsPage() {
             <Navbar />
 
             {/* Page Header */}
-            <section className="pt-32 pb-12 px-6 text-center bg-background">
-                <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                    Events
-                </h1>
-                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto">
-                    Explore the diverse range of competitions and performances at Mosaic 2026.
-                </p>
+            {/* Page Header */}
+            <section className="pt-32 pb-12 px-6 text-center bg-background flex flex-col items-center">
+                <div className="relative w-fit mx-auto flex items-center justify-center py-16 px-24 md:py-20 md:px-32">
+                    <img
+                        src="/events-button.svg"
+                        alt="Events Button Background"
+                        className="absolute inset-0 w-full h-full object-contain scale-125 md:scale-150"
+                    />
+                    <h1 className="relative z-10 text-4xl md:text-6xl font-heading font-bold text-[#EEB702] tracking-wider uppercase drop-shadow-sm pt-2">
+                        Events
+                    </h1>
+                </div>
             </section>
 
             {/* Filter Tabs */}

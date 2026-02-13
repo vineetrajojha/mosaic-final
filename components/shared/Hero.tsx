@@ -162,7 +162,7 @@ export default function Hero() {
                                 className="absolute -bottom-3 -left-3 w-12 h-12 md:w-16 md:h-16 -rotate-90"
                             />
 
-                            <span className="relative z-10 tracking-widest drop-shadow-sm">REGISTER NOW</span>
+                            <span className="relative z-10 tracking-widest drop-shadow-sm ">Register Now</span>
                         </div>
                     </Link>
                 </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -42,7 +43,51 @@ export default function Navbar() {
                     : "bg-transparent"
             )}
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-center">
+            {/* Hanging Lamps - Right */}
+            <motion.div
+                initial={{ rotate: -5 }}
+                animate={{ rotate: 5 }}
+                transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                }}
+                className="absolute top-0 right-[5%] sm:right-[10%] md:right-[1%] lg:right-[2%] z-[100] origin-top"
+                style={{ transformOrigin: "top center" }}
+            >
+                <Image
+                    src="/hanging-right.svg"
+                    alt="Hanging Lamp Right"
+                    width={200}
+                    height={350}
+                    className="w-[120px] md:w-[160px] lg:w-[200px] h-auto opacity-100 mix-blend-normal"
+                />
+            </motion.div>
+
+            {/* Hanging Lamps - Left */}
+            <motion.div
+                initial={{ rotate: 5 }}
+                animate={{ rotate: -5 }}
+                transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                }}
+                className="absolute top-0 left-[5%] sm:left-[10%] md:left-[1%] lg:left-[2%] z-[100] origin-top"
+                style={{ transformOrigin: "top center" }}
+            >
+                <Image
+                    src="/hanging-left.svg"
+                    alt="Hanging Lamp Left"
+                    width={200}
+                    height={350}
+                    className="w-[120px] md:w-[160px] lg:w-[200px] h-auto opacity-100 mix-blend-normal"
+                />
+            </motion.div>
+
+            <div className="max-w-7xl mx-auto flex items-center justify-center relative z-40">
                 {/* Desktop Navigation - Centered */}
                 <div className="hidden md:flex items-center gap-12">
                     {navLinks.map((link) => (
@@ -122,3 +167,4 @@ function MobileMenu() {
         </>
     )
 }
+
