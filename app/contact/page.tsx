@@ -9,11 +9,18 @@ export default function ContactPage() {
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
 
-            <section className="pt-32 pb-12 px-6 text-center">
-                <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                    Contact Us
-                </h1>
-                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto">
+            <section className="pt-32 pb-12 px-6 text-center bg-background flex flex-col items-center">
+                <div className="relative w-fit mx-auto flex items-center justify-center py-16 px-24 md:py-20 md:px-32">
+                    <img
+                        src="/events-button.svg"
+                        alt="Events Button Background"
+                        className="absolute inset-0 w-full h-full object-contain scale-125 md:scale-150"
+                    />
+                    <h1 className="relative z-10 text-3xl md:text-5xl font-heading font-bold text-[#EEB702] tracking-wider uppercase drop-shadow-sm pt-2">
+                        Contact
+                    </h1>
+                </div>
+                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto mt-4">
                     Have questions? Reach out to us and we'll help you out.
                 </p>
             </section>
@@ -46,12 +53,13 @@ export default function ContactPage() {
                     {/* Map Embed */}
                     <div className="w-full h-64 rounded-2xl overflow-hidden border border-white/10">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.206461973656!2d77.2090212!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2db961be393%3A0xf6c7ef5ee6dd10ae!2sIndia%20Gate%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6370219293904!2d77.4887393761532!3d28.460356391877433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e13dcbf0eb%3A0xfcf1c4d9749a78b4!2sIILM%20University%2C%20Greater%20Noida!5e0!3m2!1sen!2sin!4v1771064566940!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
+                            dark
                         ></iframe>
                     </div>
                 </div>

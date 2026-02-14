@@ -23,10 +23,17 @@ export default function GalleryPage() {
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
 
-            <section className="pt-32 pb-12 px-6 text-center">
-                <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                    Gallery
-                </h1>
+            <section className="pt-32 pb-12 px-6 text-center bg-background flex flex-col items-center">
+                <div className="relative w-fit mx-auto flex items-center justify-center py-16 px-24 md:py-20 md:px-32">
+                    <img
+                        src="/events-button.svg"
+                        alt="Events Button Background"
+                        className="absolute inset-0 w-full h-full object-contain scale-125 md:scale-150"
+                    />
+                    <h1 className="relative z-10 text-4xl md:text-6xl font-heading font-bold text-[#EEB702] tracking-wider uppercase drop-shadow-sm pt-2">
+                        Gallery
+                    </h1>
+                </div>
             </section>
 
             {/* Masonry Grid */}

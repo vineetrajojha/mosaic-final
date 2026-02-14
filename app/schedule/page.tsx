@@ -34,11 +34,18 @@ export default function SchedulePage() {
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
 
-            <section className="pt-32 pb-12 px-6 text-center">
-                <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                    Schedule
-                </h1>
-                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto">
+            <section className="pt-32 pb-12 px-6 text-center bg-background flex flex-col items-center">
+                <div className="relative w-fit mx-auto flex items-center justify-center py-16 px-24 md:py-20 md:px-32">
+                    <img
+                        src="/events-button.svg"
+                        alt="Events Button Background"
+                        className="absolute inset-0 w-full h-full object-contain scale-125 md:scale-150"
+                    />
+                    <h1 className="relative z-10 text-4xl md:text-6xl font-heading font-bold text-[#EEB702] tracking-wider uppercase drop-shadow-sm pt-2">
+                        Schedule
+                    </h1>
+                </div>
+                <p className="text-xl text-secondary font-sans max-w-2xl mx-auto mt-4">
                     Don't miss a beat. Plan your three days of fun.
                 </p>
             </section>
@@ -50,8 +57,8 @@ export default function SchedulePage() {
                         key={day}
                         onClick={() => setActiveDay(day as keyof typeof scheduleData)}
                         className={`px-8 py-3 rounded-xl font-heading font-bold text-lg transition-all duration-300 ${activeDay === day
-                                ? "bg-accent text-accent-foreground scale-105"
-                                : "bg-white/5 text-secondary hover:bg-white/10"
+                            ? "bg-accent text-accent-foreground scale-105"
+                            : "bg-white/5 text-secondary hover:bg-white/10"
                             }`}
                     >
                         {day}
