@@ -1,59 +1,22 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, Users, Trophy } from "lucide-react";
 import Link from "next/link";
 import eventsData from "@/events.json";
 
-// Types
-interface EventItem {
-    id: number;
-    name: string;
-    description: string;
-    fee: number | string;
-    teamSize: string;
-    image: string;
-    category: string;
-    date: string;
-    time: string;
-    venue: string;
-    prize: string;
-}
-
-// Process events data
-const allEvents: EventItem[] = eventsData.events.flatMap((categoryGroup) =>
-    categoryGroup.items.map((item: any) => ({
-        id: item.id,
-        name: item.name,
-        description: item.note || `Experience the thrill of ${item.name} at Mosaic 2026!`,
-        fee: item.fee || item.fee_per_person || (item.solo_fee ? `Solo: ${item.solo_fee}, Group: ${item.group_fee}` : "Free"),
-        teamSize: item.team_size || item.participants || (item.fee_per_person ? "Per Person" : "Individual/Group"),
-        image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop", // Default placeholder
-        category: categoryGroup.category,
-        date: "TBA",
-        time: "TBA",
-        venue: "TBA",
-        prize: "TBA",
-    }))
-);
-
-const categories = ["All", ...eventsData.events.map((group) => group.category)];
+// Helper to get image prefix
+const getCategoryImgPrefix = (category: string) => {
+    if (category === "Arts") return "Art";
+    return category;
+};
 
 export default function EventsPage() {
-    const [activeCategory, setActiveCategory] = useState("All");
-
-    const filteredEvents = activeCategory === "All"
-        ? allEvents
-        : allEvents.filter((event) => event.category === activeCategory);
-
     return (
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
 
-            {/* Page Header */}
             {/* Page Header */}
             <section className="pt-32 pb-12 px-6 text-center bg-background flex flex-col items-center">
                 <div className="relative w-fit mx-auto flex items-center justify-center py-16 px-24 md:py-20 md:px-32">
@@ -68,103 +31,100 @@ export default function EventsPage() {
                 </div>
             </section>
 
-            {/* Filter Tabs */}
-            <section className="px-6 mb-12">
-                <div className="flex flex-wrap justify-center gap-4">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={`px-6 py-2 rounded-full font-heading font-bold transition-all duration-300 ${activeCategory === category
-                                ? "bg-accent text-accent-foreground scale-105 shadow-[0_0_15px_rgba(238,183,2,0.4)]"
-                                : "bg-white/5 text-secondary hover:bg-white/10"
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </div>
-            </section>
+            {/* Events Categories */}
+            <div className="space-y-24 pb-24">
+                {eventsData.events.map((categoryGroup, categoryIndex) => {
+                    const imgPrefix = getCategoryImgPrefix(categoryGroup.category);
 
-            {/* Events Grid */}
-            <section className="px-6 md:px-12 pb-24 max-w-7xl mx-auto">
-                <motion.div
-                    layout
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    <AnimatePresence>
-                        {filteredEvents.map((event) => (
-                            <motion.div
-                                layout
-                                key={event.id}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-colors"
-                            >
-                                {/* Image */}
-                                <div className="h-48 overflow-hidden relative">
+                    return (
+                        <section key={categoryGroup.category} className="px-6 md:px-12 max-w-7xl mx-auto">
+                            {/* Events Grid for this Category */}
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {/* Category Cover Card */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5 }}
+                                    className="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-xl"
+                                >
                                     <img
-                                        src={event.image}
-                                        alt={event.name}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        src={`/events/${imgPrefix} 0.png`}
+                                        alt={`${categoryGroup.category} Cover`}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop";
+                                        }}
                                     />
-                                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold font-heading">
-                                        {event.category}
-                                    </div>
-                                </div>
+                                </motion.div>
 
-                                {/* Content */}
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-heading font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
-                                        {event.name}
-                                    </h3>
-                                    <p className="text-secondary text-sm font-sans mb-4 line-clamp-2">
-                                        {event.description}
-                                    </p>
+                                {categoryGroup.items.map((event: any, index: number) => (
+                                    <motion.div
+                                        key={event.id}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
+                                        className="group relative h-[400px] rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-500 cursor-pointer"
+                                    >
+                                        <Link href="/register" className="block w-full h-full">
+                                            {/* Background Image */}
+                                            <div className="absolute inset-0">
+                                                <img
+                                                    src={`/events/${imgPrefix} ${index + 1}.png`}
+                                                    alt={event.name}
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    onError={(e) => {
+                                                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop";
+                                                    }}
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                                            </div>
 
-                                    <div className="space-y-2 text-sm text-secondary/80 font-sans mb-6">
-                                        <div className="flex items-center gap-2">
-                                            <Calendar size={16} className="text-accent" />
-                                            <span>{event.date} • {event.time}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <MapPin size={16} className="text-accent" />
-                                            <span>{event.venue}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Users size={16} className="text-accent" />
-                                            <span>{event.teamSize}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Trophy size={16} className="text-accent" />
-                                            <span>Fee: {typeof event.fee === 'number' ? `₹${event.fee}` : event.fee}</span>
-                                        </div>
-                                    </div>
+                                            {/* Content Overlay */}
+                                            <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                                                <div className="transform transition-all duration-500 translate-y-8 group-hover:translate-y-0">
+                                                    <div className="flex justify-between items-start mb-2">
+                                                        <div className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold font-heading mb-3">
+                                                            {categoryGroup.category}
+                                                        </div>
+                                                    </div>
 
-                                    <div className="flex gap-3">
-                                        <Link href="/register" className="flex-1">
-                                            <button className="w-full py-2 rounded-lg bg-accent text-accent-foreground font-bold hover:opacity-90 transition font-heading text-sm">
-                                                Register
-                                            </button>
+                                                    <h3 className="text-3xl font-heading font-bold text-white mb-2 leading-tight">
+                                                        {event.name}
+                                                    </h3>
+
+                                                    {/* Hover Details */}
+                                                    <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                                                        <p className="text-gray-300 text-sm font-sans mb-4 line-clamp-3">
+                                                            {event.description}
+                                                        </p>
+
+                                                        <div className="space-y-2 text-sm text-gray-200 font-sans border-t border-white/20 pt-4">
+                                                            <div className="flex justify-between">
+                                                                <span className="text-white/60">Participants:</span>
+                                                                <span className="font-semibold text-accent">{event.participants}</span>
+                                                            </div>
+                                                            <div className="flex justify-between">
+                                                                <span className="text-white/60">Registration Fee:</span>
+                                                                <span className="font-semibold text-accent">{event.fee}</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <button className="w-full mt-6 py-3 rounded-lg bg-accent text-accent-foreground font-bold hover:bg-white hover:text-black transition-colors font-heading text-sm uppercase tracking-wide">
+                                                            Register Now
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </Link>
-                                        <button className="flex-1 py-2 rounded-lg border border-white/20 text-white font-bold hover:bg-white/10 transition font-heading text-sm">
-                                            Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
-
-                {filteredEvents.length === 0 && (
-                    <div className="text-center py-20 text-secondary font-sans">
-                        No events found in this category.
-                    </div>
-                )}
-            </section>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </section>
+                    );
+                })}
+            </div>
 
             <Footer />
         </main>

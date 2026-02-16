@@ -12,175 +12,205 @@
   },
   "events": [
     {
-      "category": "Swarag",
+      "category": "Dance",
       "items": [
         {
           "id": 1,
-          "name": "Solo Singing",
+          "name": "Abhinaya",
+          "description": "Solo (Classical)",
+          "participants": "Solo",
+          "fee": "250/-"
+        },
+        {
+          "id": 2,
+          "name": "Rasa Tarang",
+          "description": "Group (Classical)",
+          "participants": "5-15",
+          "fee": "150/- per member"
+        },
+        {
+          "id": 3,
+          "name": "Ranmuch",
+          "description": "Solo (Western)",
+          "participants": "Solo",
+          "fee": "250/-"
+        },
+        {
+          "id": 4,
+          "name": "Bhasad",
+          "description": "Group (Western)",
+          "participants": "5-15",
+          "fee": "150/- per member"
+        }
+      ]
+    },
+    {
+      "category": "Music",
+      "items": [
+        {
+          "id": 5,
+          "name": "SwarStuti",
+          "description": "Solo Singing",
           "participants": "Solo",
           "fee": "300/-"
         },
         {
-          "id": 2,
-          "name": "Group Singing",
+          "id": 6,
+          "name": "SwarSangam",
+          "description": "Group Singing",
           "participants": "4-8",
           "fee": "900/-"
         },
         {
-          "id": 3,
-          "name": "Rap Battle",
+          "id": 7,
+          "name": "VākStrike",
+          "description": "Rap Battle",
           "participants": "Solo",
           "fee": "300/-"
         },
         {
-          "id": 4,
-          "name": "Beat Boxing",
+          "id": 8,
+          "name": "LayaKriti",
+          "description": "Beatboxing",
           "participants": "Solo",
           "fee": "300/-"
         },
         {
-          "id": 5,
-          "name": "Battle of Bands",
+          "id": 9,
+          "name": "Saaz-o-Aawaz",
+          "description": "Battle of Bands",
           "participants": "Band",
           "fee": "1500/-"
         },
         {
-          "id": 6,
-          "name": "Instrumental Showdown",
+          "id": 10,
+          "name": "Vadyotsav",
+          "description": "Instruments",
           "participants": "Solo",
           "fee": "300/-"
         }
       ]
     },
     {
-      "category": "Aarambh Dance",
-      "items": [
-        {
-          "id": 7,
-          "name": "Western Solo Dance",
-          "participants": "Solo",
-          "fee": "250/-"
-        },
-        {
-          "id": 8,
-          "name": "Western Group Dance",
-          "participants": "5-15",
-          "fee": "150/- per member"
-        },
-        {
-          "id": 9,
-          "name": "Classical solo Dance",
-          "participants": "Solo",
-          "fee": "250/-"
-        },
-        {
-          "id": 10,
-          "name": "Classical Group Dance",
-          "participants": "5-15",
-          "fee": "150/- per member"
-        }
-      ]
-    },
-    {
-      "category": "Campus Lens",
+      "category": "Artistic",
       "items": [
         {
           "id": 11,
-          "name": "Reel-O-Holic",
+          "name": "Reel riwaaz",
+          "description": "Reel Making",
           "participants": "Solo",
           "fee": "250/-"
         },
         {
           "id": 12,
-          "name": "Shutter showcase",
+          "name": "Riwaaz in frames",
+          "description": "Photography",
           "participants": "Solo",
           "fee": "300/-"
         },
         {
           "id": 13,
-          "name": "Cinemagic",
+          "name": "Utsav drishya",
+          "description": "After movie",
           "participants": "3-4",
           "fee": "500/-"
         }
       ]
     },
     {
-      "category": "Elegance",
+      "category": "Arts",
       "items": [
         {
           "id": 14,
-          "name": "Solera ( Fashion Walk )",
+          "name": "Pratimān",
+          "description": "Sculpting",
+          "participants": "Solo",
+          "fee": "100/-"
+        },
+        {
+          "id": 15,
+          "name": "रंगकथा",
+          "description": "Face Painting",
+          "participants": "Solo",
+          "fee": "100/-"
+        },
+        {
+          "id": 16,
+          "name": "चित्रलहरी",
+          "description": "Live Art",
+          "participants": "Solo",
+          "fee": "100/-"
+        }
+      ]
+    },
+    {
+      "category": "Fashion",
+      "items": [
+        {
+          "id": 17,
+          "name": "Solera",
+          "description": "Fashion Walk",
           "participants": "10-25",
           "fee": "3000/- per Team"
         }
       ]
     },
     {
-      "category": "Thespian Society",
+      "category": "Drama",
       "items": [
         {
-          "id": 15,
-          "name": "Mono acting",
+          "id": 18,
+          "name": "Ekankam",
+          "description": "Mono acting",
           "participants": "Solo",
           "fee": "300/-"
         },
         {
-          "id": 16,
-          "name": "Nukkad Natak",
+          "id": 19,
+          "name": "Samvada",
+          "description": "Nukkad natak",
           "participants": "5-8",
           "fee": "1000/-"
         },
         {
-          "id": 17,
-          "name": "Silent Acting",
+          "id": 20,
+          "name": "Maunrang",
+          "description": "Silent Acting",
           "participants": "5-8",
           "fee": "Solo - 300/-"
         }
       ]
     },
     {
-      "category": "Srijan Society",
-      "items": [
-        {
-          "id": 18,
-          "name": "Live Art",
-          "participants": "Solo",
-          "fee": "100/-"
-        },
-        {
-          "id": 19,
-          "name": "Sculpt it up",
-          "participants": "Solo",
-          "fee": "100/-"
-        },
-        {
-          "id": 20,
-          "name": "Face painting",
-          "participants": "Solo",
-          "fee": "100/-"
-        }
-      ]
-    },
-    {
-      "category": "Literary & Media",
+      "category": "Literary",
       "items": [
         {
           "id": 21,
-          "name": "Story telling",
-          "participants": "Solo",
-          "fee": "100/-"
-        },
-        {
-          "id": 22,
-          "name": "Extempore",
+          "name": "Think N Talk",
+          "description": "Extempore",
           "participants": "Solo",
           "fee": "150/-"
         },
         {
-          "id": 23,
-          "name": "Debate",
+          "id": 22,
+          "name": "Samvaad showdown",
+          "description": "Debate",
           "participants": "2-4",
           "fee": "100/- per student"
+        },
+        {
+          "id": 23,
+          "name": "Film fusion",
+          "description": "Short film making",
+          "participants": "3-5",
+          "fee": "500/-"
+        },
+        {
+          "id": 24,
+          "name": "Katha utsav",
+          "description": "Story telling",
+          "participants": "Solo",
+          "fee": "100/-"
         }
       ]
     }

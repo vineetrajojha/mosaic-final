@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -107,14 +108,20 @@ export default function Hero() {
                 {/* Central Oval */}
                 <div
                     ref={ovalRef}
-                    className="relative w-[300px] h-[180px] md:w-[600px] md:h-[350px] bg-[#EEB702] rounded-[50%] flex items-center justify-center shadow-2xl mb-8"
+                    className="relative w-[300px] h-[180px] md:w-[600px] md:h-[350px] flex items-center justify-center mb-8"
                 >
-                    <h1
+                    <div
                         ref={textRef}
-                        className="text-5xl md:text-9xl font-[family-name:var(--font-irish-grover)] font-bold text-[#511C6A] tracking-wider"
+                        className="relative w-[100%] h-[100%] flex items-center justify-center env-3d-text "
                     >
-                        MOSAIC
-                    </h1>
+                        <Image
+                            src="/mosaiclogo2.png"
+                            alt="MOSAIC Logo"
+                            fill
+                            className="object-contain drop-shadow-2xl"
+                            priority
+                        />
+                    </div>
                 </div>
 
                 {/* Date */}
