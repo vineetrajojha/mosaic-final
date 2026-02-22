@@ -53,7 +53,7 @@ export default function Navbar() {
                     repeatType: "reverse",
                     ease: "easeInOut",
                 }}
-                className="absolute top-0 right-[5%] sm:right-[10%] md:right-[1%] lg:right-[2%] z-[100] origin-top"
+                className="absolute top-0 right-[5%] sm:right-[10%] md:right-[1%] lg:right-[2%] z-[100] origin-top pointer-events-none"
                 style={{ transformOrigin: "top center" }}
             >
                 <Image
@@ -75,7 +75,7 @@ export default function Navbar() {
                     repeatType: "reverse",
                     ease: "easeInOut",
                 }}
-                className="absolute top-0 left-[5%] sm:left-[10%] md:left-[1%] lg:left-[2%] z-[100] origin-top"
+                className="absolute top-0 left-[5%] sm:left-[10%] md:left-[1%] lg:left-[2%] z-[100] origin-top pointer-events-none"
                 style={{ transformOrigin: "top center" }}
             >
                 <Image
@@ -87,7 +87,24 @@ export default function Navbar() {
                 />
             </motion.div>
 
-            <div className="max-w-7xl mx-auto flex items-center justify-center relative z-40">
+            <div className="max-w-7xl mx-auto flex items-center justify-center relative z-40 h-10">
+                {/* Mobile Logo (only visible when scrolled) */}
+                <div
+                    className={`md:hidden absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                        }`}
+                >
+                    <Link href="/">
+                        <Image
+                            src="/mosaiclogo2.png"
+                            alt="Mosaic Logo"
+                            width={160}
+                            height={60}
+                            className="h-25 w-auto object-contain"
+                            priority
+                        />
+                    </Link>
+                </div>
+
                 {/* Desktop Navigation - Centered */}
                 <div className="hidden md:flex items-center gap-12">
                     {navLinks.map((link) => (

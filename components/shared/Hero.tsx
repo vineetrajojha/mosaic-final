@@ -105,10 +105,9 @@ export default function Hero() {
             {/* Content */}
             <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
 
-                {/* Central Oval */}
                 <div
                     ref={ovalRef}
-                    className="relative w-[300px] h-[180px] md:w-[600px] md:h-[350px] flex items-center justify-center mb-8"
+                    className="relative w-[400px] h-[240px] md:w-[800px] md:h-[450px] flex items-center justify-center mb-8"
                 >
                     <div
                         ref={textRef}
