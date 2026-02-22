@@ -99,7 +99,7 @@ export default function Navbar() {
                             alt="Mosaic Logo"
                             width={160}
                             height={60}
-                            className="h-25 w-auto object-contain"
+                            className="h-20 w-auto object-contain"
                             priority
                         />
                     </Link>
