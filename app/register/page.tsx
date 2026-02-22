@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { User, Mail, Phone, School, ArrowRight, Upload, CreditCard, Users, QrCode } from "lucide-react";
 import Link from "next/link";
 import eventsData from "../../events.json";
-import { supabase } from "@/lib/supabaseClient";
+import { submitRegistration } from "@/app/actions/submitRegistration";
 
 // Helper to flatten events for the dropdown
 const allEvents = eventsData.events.flatMap((category) =>
@@ -18,6 +18,17 @@ const allEvents = eventsData.events.flatMap((category) =>
 
 export default function RegisterPage() {
     const [selectedEventId, setSelectedEventId] = useState<string>("");
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const eventId = params.get("eventId");
+            if (eventId && allEvents.some((e) => e.id.toString() === eventId)) {
+                setSelectedEventId(eventId);
+            }
+        }
+    }, []);
+
     const [formData, setFormData] = useState({
         teamName: "",
         university: "",
@@ -76,39 +87,28 @@ export default function RegisterPage() {
         }
 
         try {
-            // 1. Upload Payment Screenshot
-            const fileExt = paymentFile.name.split(".").pop();
-            const fileName = `${Date.now()}_${formData.leaderPhone}.${fileExt}`;
-            const { data: fileData, error: fileError } = await supabase.storage
-                .from("payment-screenshots")
-                .upload(fileName, paymentFile);
+            // Prepare FormData for the Server Action
+            const actionData = new FormData();
+            actionData.append("paymentFile", paymentFile);
 
-            if (fileError) throw fileError;
+            const registrationJson = {
+                event_id: selectedEvent.id,
+                event_name: selectedEvent.name,
+                category: selectedEvent.category,
+                team_name: isTeamEvent ? formData.teamName : null,
+                university: formData.university,
+                leader_name: formData.leaderName,
+                leader_email: formData.leaderEmail,
+                leader_phone: formData.leaderPhone,
+                members: members,
+                amount: selectedEvent.fee
+            };
 
-            // Get the public URL for the uploaded image
-            const { data: { publicUrl } } = supabase.storage
-                .from("payment-screenshots")
-                .getPublicUrl(fileName);
+            actionData.append("registrationData", JSON.stringify(registrationJson));
 
-            // 2. Insert Data into Supabase
-            const { error: dbError } = await supabase.from("registrations").insert([
-                {
-                    event_id: selectedEvent.id,
-                    event_name: selectedEvent.name,
-                    category: selectedEvent.category,
-                    team_name: isTeamEvent ? formData.teamName : null,
-                    university: formData.university,
-                    leader_name: formData.leaderName,
-                    leader_email: formData.leaderEmail,
-                    leader_phone: formData.leaderPhone,
-                    members: members,
-                    payment_screenshot_url: publicUrl,
-                    amount: selectedEvent.fee,
-                    status: "pending",
-                },
-            ]);
+            const { success, error } = await submitRegistration(actionData);
 
-            if (dbError) throw dbError;
+            if (!success) throw new Error(error || "Unknown transaction error.");
 
             setMessage({ type: "success", text: "Registration successful! We will contact you shortly." });
             // Reset form
@@ -313,11 +313,43 @@ export default function RegisterPage() {
                             </h3>
 
                             <div className="grid md:grid-cols-2 gap-8">
-                                <div className="space-y-4 flex flex-col items-center justify-center p-6 bg-white py-8 rounded-xl">
-                                    {/* Placeholder QR Code */}
-                                    <QrCode size={150} className="text-black" />
-                                    <p className="text-black font-bold text-center">Scan to Pay: {selectedEvent?.fee || "0/-"}</p>
-                                    <p className="text-xs text-gray-600 text-center">UPI ID: mosaic@upi</p>
+                                <div className="space-y-4 flex flex-col items-center justify-center p-8 bg-black/40 border border-white/10 rounded-2xl relative overflow-hidden group hover:border-accent/50 transition-colors duration-500">
+                                    {/* Decorative Flower Background */}
+                                    <div className="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                                        <img
+                                            src="/decorative-flower.svg"
+                                            alt=""
+                                            className="w-full h-full object-contain transform rotate-12"
+                                        />
+                                    </div>
+
+                                    <h4 className="text-xl font-bold text-secondary mb-2 relative z-10">Total Amount</h4>
+                                    <p className="text-5xl font-heading font-bold text-accent mb-6 relative z-10 drop-shadow-[0_0_15px_rgba(238,183,2,0.3)]">
+                                        {selectedEvent?.fee || "0/-"}
+                                    </p>
+
+                                    <Link
+                                        href="https://form.qfixonline.com/mosaic"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full py-4 rounded-xl bg-accent text-accent-foreground font-bold font-heading hover:opacity-90 transition-all flex items-center justify-center gap-2 mb-4 hover:shadow-[0_0_20px_rgba(238,183,2,0.4)] relative z-10"
+                                    >
+                                        Pay Now <CreditCard size={18} />
+                                    </Link>
+
+                                    <div className="text-sm text-gray-300 text-left w-full space-y-3 mt-4 pt-4 border-t border-white/10 relative z-10">
+                                        <p className="font-bold text-white flex items-center gap-2">
+                                            <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
+                                            Qfix Portal Instructions:
+                                        </p>
+                                        <ul className="list-disc pl-6 space-y-2 text-gray-400 font-sans">
+                                            <li>You will be redirected to the secure Qfix payment portal.</li>
+                                            <li>Fill in the exact amount: <strong className="text-white">{selectedEvent?.fee || "0/-"}</strong></li>
+                                            <li><strong>Student Name:</strong> Enter the Leader's Name (<strong className="text-white">{formData.leaderName || "as filled above"}</strong>).</li>
+                                            <li><strong>Event Name:</strong> (<strong className="text-white">{selectedEvent?.name || "selected event"}</strong>).</li>
+                                            <li>Use the same Email and Phone Number provided.</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
                                 <div className="space-y-4">

@@ -6,11 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import eventsData from "@/events.json";
 
-// Helper to get image prefix
-const getCategoryImgPrefix = (category: string) => {
-    if (category === "Arts") return "Art";
-    return category;
-};
+
 
 export default function EventsPage() {
     return (
@@ -34,8 +30,6 @@ export default function EventsPage() {
             {/* Events Categories */}
             <div className="space-y-24 pb-24">
                 {eventsData.events.map((categoryGroup, categoryIndex) => {
-                    const imgPrefix = getCategoryImgPrefix(categoryGroup.category);
-
                     return (
                         <section key={categoryGroup.category} className="px-6 md:px-12 max-w-7xl mx-auto">
                             {/* Events Grid for this Category */}
@@ -49,7 +43,7 @@ export default function EventsPage() {
                                     className="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-xl"
                                 >
                                     <img
-                                        src={`/events/${imgPrefix} 0.png`}
+                                        src={`/events/${categoryGroup.coverImage}`}
                                         alt={`${categoryGroup.category} Cover`}
                                         className="w-full h-full object-cover"
                                         onError={(e) => {
@@ -67,18 +61,19 @@ export default function EventsPage() {
                                         transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
                                         className="group relative h-[400px] rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-500 cursor-pointer"
                                     >
-                                        <Link href="/register" className="block w-full h-full">
+                                        <Link href={`/register?eventId=${event.id}`} className="block w-full h-full">
                                             {/* Background Image */}
                                             <div className="absolute inset-0">
                                                 <img
-                                                    src={`/events/${imgPrefix} ${index + 1}.png`}
+                                                    src={`/events/${event.image}`}
                                                     alt={event.name}
                                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                     onError={(e) => {
                                                         (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop";
                                                     }}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-500" />
+                                                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                             </div>
 
                                             {/* Content Overlay */}

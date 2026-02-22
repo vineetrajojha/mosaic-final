@@ -13,204 +13,235 @@
   "events": [
     {
       "category": "Dance",
+      "coverImage": "dance-cover.png",
       "items": [
         {
           "id": 1,
           "name": "Abhinaya",
           "description": "Solo (Classical)",
           "participants": "Solo",
-          "fee": "250/-"
+          "fee": "250/-",
+          "image": "dance-abhinaya.png"
         },
         {
           "id": 2,
           "name": "Rasa Tarang",
           "description": "Group (Classical)",
           "participants": "5-15",
-          "fee": "150/- per member"
+          "fee": "150/- per member",
+          "image": "dance-rasatarang.png"
         },
         {
           "id": 3,
           "name": "Ranmuch",
           "description": "Solo (Western)",
           "participants": "Solo",
-          "fee": "250/-"
+          "fee": "250/-",
+          "image": "dance-rangmunch.png"
         },
         {
           "id": 4,
           "name": "Bhasad",
           "description": "Group (Western)",
           "participants": "5-15",
-          "fee": "150/- per member"
+          "fee": "150/- per member",
+          "image": "dance-bhasad.png"
         }
       ]
     },
     {
       "category": "Music",
+      "coverImage": "music-cover.png",
       "items": [
         {
           "id": 5,
           "name": "SwarStuti",
           "description": "Solo Singing",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "music-swarstuti.png"
         },
         {
           "id": 6,
           "name": "SwarSangam",
           "description": "Group Singing",
           "participants": "4-8",
-          "fee": "900/-"
+          "fee": "900/-",
+          "image": "music-swarsangam.png"
         },
         {
           "id": 7,
           "name": "VākStrike",
           "description": "Rap Battle",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "music-vakstrike.png"
         },
         {
           "id": 8,
           "name": "LayaKriti",
           "description": "Beatboxing",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "music-layakriti.png"
         },
         {
           "id": 9,
           "name": "Saaz-o-Aawaz",
           "description": "Battle of Bands",
           "participants": "Band",
-          "fee": "1500/-"
+          "fee": "1500/-",
+          "image": "music-saazeawaaz.png"
         },
         {
           "id": 10,
           "name": "Vadyotsav",
           "description": "Instruments",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "music-vadyotsav.png"
         }
       ]
     },
     {
       "category": "Artistic",
+      "coverImage": "artistic-cover.png",
       "items": [
         {
           "id": 11,
           "name": "Reel riwaaz",
           "description": "Reel Making",
           "participants": "Solo",
-          "fee": "250/-"
+          "fee": "250/-",
+          "image": "artistic-reel-reewaz.png"
         },
         {
           "id": 12,
           "name": "Riwaaz in frames",
           "description": "Photography",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "artistic-riwazinframes.png"
         },
         {
           "id": 13,
           "name": "Utsav drishya",
           "description": "After movie",
           "participants": "3-4",
-          "fee": "500/-"
+          "fee": "500/-",
+          "image": "artistic-utsavdrishya.png"
         }
       ]
     },
     {
       "category": "Arts",
+      "coverImage": "art-cover.png",
       "items": [
         {
           "id": 14,
           "name": "Pratimān",
           "description": "Sculpting",
           "participants": "Solo",
-          "fee": "100/-"
+          "fee": "100/-",
+          "image": "art-pratiman.png"
         },
         {
           "id": 15,
           "name": "रंगकथा",
           "description": "Face Painting",
           "participants": "Solo",
-          "fee": "100/-"
+          "fee": "100/-",
+          "image": "art-rang katha.png"
         },
         {
           "id": 16,
           "name": "चित्रलहरी",
           "description": "Live Art",
           "participants": "Solo",
-          "fee": "100/-"
+          "fee": "100/-",
+          "image": "art-chitra.png"
         }
       ]
     },
     {
       "category": "Fashion",
+      "coverImage": "fashion-cover.png",
       "items": [
         {
           "id": 17,
           "name": "Solera",
           "description": "Fashion Walk",
           "participants": "10-25",
-          "fee": "3000/- per Team"
+          "fee": "3000/- per Team",
+          "image": "fashion-solera.png"
         }
       ]
     },
     {
       "category": "Drama",
+      "coverImage": "drama-cover.png",
       "items": [
         {
           "id": 18,
           "name": "Ekankam",
           "description": "Mono acting",
           "participants": "Solo",
-          "fee": "300/-"
+          "fee": "300/-",
+          "image": "drama-ekankam.png"
         },
         {
           "id": 19,
           "name": "Samvada",
           "description": "Nukkad natak",
           "participants": "5-8",
-          "fee": "1000/-"
+          "fee": "1000/-",
+          "image": "drama-samvada.png"
         },
         {
           "id": 20,
           "name": "Maunrang",
           "description": "Silent Acting",
           "participants": "5-8",
-          "fee": "Solo - 300/-"
+          "fee": "Solo - 300/-",
+          "image": "drama-maunrang.png"
         }
       ]
     },
     {
       "category": "Literary",
+      "coverImage": "literary-cover.png",
       "items": [
         {
           "id": 21,
           "name": "Think N Talk",
           "description": "Extempore",
           "participants": "Solo",
-          "fee": "150/-"
+          "fee": "150/-",
+          "image": "literary-thinkandtalk.png"
         },
         {
           "id": 22,
           "name": "Samvaad showdown",
           "description": "Debate",
           "participants": "2-4",
-          "fee": "100/- per student"
+          "fee": "100/- per student",
+          "image": "literary-samvaadshowdown.png"
         },
         {
           "id": 23,
           "name": "Film fusion",
           "description": "Short film making",
           "participants": "3-5",
-          "fee": "500/-"
+          "fee": "500/-",
+          "image": "literary-filmfusion.png"
         },
         {
           "id": 24,
           "name": "Katha utsav",
           "description": "Story telling",
           "participants": "Solo",
-          "fee": "100/-"
+          "fee": "100/-",
+          "image": "literary-kathautsav.png"
         }
       ]
     }

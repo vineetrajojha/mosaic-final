@@ -1,10 +1,45 @@
 "use client";
 
+import { useState, ChangeEvent, FormEvent } from "react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { submitContact } from "@/app/actions/submitContact";
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+    const [loading, setLoading] = useState(false);
+    const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatusMessage(null);
+
+        try {
+            const { success, error } = await submitContact(formData);
+
+            if (!success) throw new Error(error || "Unknown error");
+
+            setStatusMessage({ type: "success", text: "Your message has been sent successfully!" });
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        } catch (error: any) {
+            console.error("Error submitting contact form:", error);
+            setStatusMessage({ type: "error", text: error.message || "Failed to send message. Please try again." });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
@@ -59,7 +94,6 @@ export default function ContactPage() {
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
-                            dark
                         ></iframe>
                     </div>
                 </div>
@@ -67,30 +101,72 @@ export default function ContactPage() {
                 {/* Contact Form */}
                 <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
                     <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Send a Message</h3>
-                    <form className="space-y-6">
+
+                    {statusMessage && (
+                        <div className={`mb-6 p-4 rounded-lg text-sm font-bold text-center ${statusMessage.type === 'success' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                            {statusMessage.text}
+                        </div>
+                    )}
+
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-secondary">Name</label>
-                                <input type="text" className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent" placeholder="John Doe" />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent transition"
+                                    placeholder="John Doe"
+                                />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-secondary">Email</label>
-                                <input type="email" className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent" placeholder="john@example.com" />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent transition"
+                                    placeholder="john@example.com"
+                                />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-secondary">Subject</label>
-                            <input type="text" className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent" placeholder="Inquiry about..." />
+                            <input
+                                type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleInputChange}
+                                className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent transition"
+                                placeholder="Inquiry about..."
+                            />
                         </div>
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-secondary">Message</label>
-                            <textarea rows={5} className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent" placeholder="Your message here..." />
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                required
+                                rows={5}
+                                className="w-full bg-black/20 border border-white/10 rounded-lg p-3 text-foreground focus:outline-none focus:border-accent transition"
+                                placeholder="Your message here..."
+                            />
                         </div>
 
-                        <button type="submit" className="w-full py-3 rounded-lg bg-accent text-accent-foreground font-bold font-heading hover:opacity-90 transition flex items-center justify-center gap-2">
-                            <Send size={18} /> Send Message
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="w-full py-3 rounded-lg bg-accent text-accent-foreground font-bold font-heading hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            <Send size={18} /> {loading ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 </div>
