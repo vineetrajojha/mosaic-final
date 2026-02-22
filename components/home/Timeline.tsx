@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const days = [
     {
         day: "Day 1",
-        date: "April 24",
-        title: "The Grand Opening",
-        description: "Inauguration followed by Aarambh (Dance) and Thespian (Drama) competitions. ",
+        date: "March 24",
+        title: "DJ Night",
+        description: "Electrifying DJ performances to kick off the event.",
     },
     {
         day: "Day 2",
-        date: "April 25",
-        title: "Rhythm & Beats",
-        description: "Battle of Bands, Swarag (Singing), and Solera (Fashion Show).",
+        date: "March 25",
+        title: "Band Performances",
+        description: "Experience the ultimate showdown of the best bands.",
     },
     {
         day: "Day 3",
-        date: "April 26",
-        title: "Star Night",
-        description: "Grand finale featuring celebrity performances and DJ night.",
+        date: "March 26",
+        title: "Artist Night",
+        description: "Grand finale featuring celebrity artist performances.",
     },
 ];
 

@@ -37,11 +37,12 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-heading font-bold text-foreground mb-6">Categories</h3>
                     <ul className="space-y-3 font-sans text-secondary">
-                        <li><Link href="/events?category=swarag" className="hover:text-accent transition">Swarag</Link></li>
+                        <li><Link href="/events?category=swarag" className="hover:text-accent transition">Swaraag</Link></li>
                         <li><Link href="/events?category=aarambh" className="hover:text-accent transition">Aarambh Dance</Link></li>
                         <li><Link href="/events?category=elegance" className="hover:text-accent transition">Elegance</Link></li>
                         <li><Link href="/events?category=thespian" className="hover:text-accent transition">Thespian Society</Link></li>
                         <li><Link href="/events?category=srijan" className="hover:text-accent transition">Srijan Society</Link></li>
+                        <li><Link href="/events?category=literary" className="hover:text-accent transition">CampusLens</Link></li>
                         <li><Link href="/events?category=literary" className="hover:text-accent transition">Literary & Media</Link></li>
                     </ul>
                 </div>
