@@ -89,8 +89,8 @@
           "id": 9,
           "name": "Saaz-o-Aawaz",
           "description": "Battle of Bands",
-          "participants": "Band",
-          "fee": "1500/-",
+          "participants": "4-12",
+          "fee": "150/- per member",
           "image": "music-saazeawaaz.png"
         },
         {
@@ -183,27 +183,27 @@
       "items": [
         {
           "id": 18,
-          "name": "Ekankam",
+          "name": "Monomunch",
           "description": "Mono acting",
           "participants": "Solo",
-          "fee": "300/-",
-          "image": "drama-ekankam.png"
+          "fee": "300/- per person",
+          "image": "drama-monomunch.png"
         },
         {
           "id": 19,
-          "name": "Samvada",
+          "name": "Rangsamooh",
           "description": "Nukkad natak",
-          "participants": "5-8",
-          "fee": "1000/-",
-          "image": "drama-samvada.png"
+          "participants": "5-12",
+          "fee": "150/- per person",
+          "image": "drama-rangsamooh.png"
         },
         {
           "id": 20,
-          "name": "Maunrang",
+          "name": "Andaz badlo",
           "description": "Silent Acting",
-          "participants": "5-8",
-          "fee": "Solo - 300/-",
-          "image": "drama-maunrang.png"
+          "participants": "5-12",
+          "fee": "150/- per person",
+          "image": "drama-andazbadlo.png"
         }
       ]
     },
@@ -216,31 +216,23 @@
           "name": "Think N Talk",
           "description": "Extempore",
           "participants": "Solo",
-          "fee": "150/-",
+          "fee": "200/-",
           "image": "literary-thinkandtalk.png"
         },
         {
           "id": 22,
           "name": "Samvaad showdown",
           "description": "Debate",
-          "participants": "2-4",
-          "fee": "100/- per student",
+          "participants": "2",
+          "fee": "200/- per student",
           "image": "literary-samvaadshowdown.png"
         },
         {
           "id": 23,
-          "name": "Film fusion",
-          "description": "Short film making",
-          "participants": "3-5",
-          "fee": "500/-",
-          "image": "literary-filmfusion.png"
-        },
-        {
-          "id": 24,
           "name": "Katha utsav",
           "description": "Story telling",
           "participants": "Solo",
-          "fee": "100/-",
+          "fee": "200/-",
           "image": "literary-kathautsav.png"
         }
       ]

@@ -55,12 +55,25 @@ export default function Hero() {
             const tl = gsap.timeline();
 
             // Initial Animation
-            tl.from(ovalRef.current, {
-                scale: 0,
+            tl.from([".iilm-logo", ".ampersand", ".aaghaaz-logo"], {
                 opacity: 0,
-                duration: 1.2,
-                ease: "back.out(1.7)",
+                y: -20,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
             })
+                .from(".presents-text", {
+                    opacity: 0,
+                    y: 10,
+                    duration: 0.6,
+                    ease: "power2.out"
+                }, "-=0.4")
+                .from(ovalRef.current, {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: "back.out(1.7)",
+                }, "-=0.4")
                 .from(textRef.current, {
                     scale: 0.5,
                     opacity: 0,
@@ -103,11 +116,46 @@ export default function Hero() {
         >
 
             {/* Content */}
-            <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
+            <div className="relative z-20 flex flex-col items-center justify-center w-full h-full mt-10 md:mt-20">
+
+                {/* Logos Row */}
+                <div className="flex flex-col items-center z-30 mb-6 md:mb-10">
+                    <div className="flex items-center gap-4 md:gap-8">
+                        {/* IILM Logo */}
+                        <div className="iilm-logo relative w-[160px] h-[60px] md:w-[280px] md:h-[100px]">
+                            <Image
+                                src="/iilmlogo.png"
+                                alt="IILM Logo"
+                                fill
+                                className="object-contain drop-shadow-md"
+                                priority
+                            />
+                        </div>
+
+                        {/* Ampersand */}
+                        <span className="ampersand text-2xl md:text-5xl font-heading font-bold text-[#EEB702] opacity-80">&</span>
+
+                        {/* Aaghaaz Logo */}
+                        <div className="aaghaaz-logo relative w-[120px] h-[45px] md:w-[220px] md:h-[80px]">
+                            <Image
+                                src="/aaghaazlogo.png"
+                                alt="Aaghaaz Logo"
+                                fill
+                                className="object-contain drop-shadow-md"
+                                priority
+                            />
+                        </div>
+                    </div>
+
+                    {/* Presents Text */}
+                    <div className="presents-text mt-4 md:mt-6 text-xl md:text-2xl font-heading font-bold text-white tracking-[0.2em] uppercase opacity-90 drop-shadow-lg">
+                        Presents
+                    </div>
+                </div>
 
                 <div
                     ref={ovalRef}
-                    className="relative w-[400px] h-[240px] md:w-[800px] md:h-[450px] flex items-center justify-center mb-8"
+                    className="relative w-[300px] h-[180px] md:w-[600px] md:h-[350px] flex items-center justify-center mb-8"
                 >
                     <div
                         ref={textRef}

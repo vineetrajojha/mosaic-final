@@ -124,12 +124,19 @@
 
 body {
   background: url('/bg.svg'), var(--background);
-  background-position: center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  min-height: 100vh;
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 h1,
