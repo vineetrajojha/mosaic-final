@@ -21,7 +21,7 @@ export default function Hero() {
 
     useEffect(() => {
         const calculateTimeLeft = () => {
-            const difference = +new Date("2026-03-24") - +new Date();
+            const difference = +new Date("2026-04-06") - +new Date();
             let timeLeft = {
                 days: 0,
                 hours: 0,
@@ -173,7 +173,7 @@ export default function Hero() {
 
                 {/* Date */}
                 <div className="hero-date text-2xl md:text-4xl font-heading font-bold text-[#EEB702] mb-8 tracking-wide drop-shadow-md">
-                    24, 25, 26 MARCH 2026
+                    6th - 8th April 2026
                 </div>
 
                 {/* Countdown Timer */}
