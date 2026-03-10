@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 const days = [
     {
         day: "Day 1",
-        date: "March 24",
+        date: "April 06",
         title: "DJ Night",
         description: "Electrifying DJ performances to kick off the event.",
     },
     {
         day: "Day 2",
-        date: "March 25",
+        date: "April 07",
         title: "Band Performances",
         description: "Experience the ultimate showdown of the best bands.",
     },
     {
         day: "Day 3",
-        date: "March 26",
+        date: "April 08",
         title: "Artist Night",
         description: "Grand finale featuring celebrity artist performances.",
     },
