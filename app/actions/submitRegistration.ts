@@ -8,8 +8,8 @@ export async function submitRegistration(formData: FormData) {
         const paymentFile = formData.get("paymentFile") as File;
         const registrationDataStr = formData.get("registrationData") as string;
 
-        if (!paymentFile || !registrationDataStr) {
-            return { success: false, error: "Missing required form data." };
+        if (!paymentFile || !(paymentFile instanceof File) || !paymentFile.name || !registrationDataStr) {
+            return { success: false, error: "Missing required form data or valid file." };
         }
 
         const registrationData = JSON.parse(registrationDataStr);
@@ -64,6 +64,6 @@ export async function submitRegistration(formData: FormData) {
         return { success: true };
     } catch (e: any) {
         console.error("Registration Server Action Exception:", e);
-        return { success: false, error: e.message || "An unexpected server error occurred." };
+        return { success: false, error: e instanceof Error ? e.message : String(e) };
     }
 }

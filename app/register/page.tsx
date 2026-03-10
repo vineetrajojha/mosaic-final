@@ -38,6 +38,7 @@ export default function RegisterPage() {
     });
     const [members, setMembers] = useState<{ name: string; phone: string }[]>([]);
     const [paymentFile, setPaymentFile] = useState<File | null>(null);
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -71,7 +72,9 @@ export default function RegisterPage() {
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setPaymentFile(e.target.files[0]);
+            const file = e.target.files[0];
+            setPaymentFile(file);
+            setPreviewUrl(URL.createObjectURL(file));
         }
     };
 
@@ -121,6 +124,7 @@ export default function RegisterPage() {
             });
             setMembers([]);
             setPaymentFile(null);
+            setPreviewUrl(null);
             setSelectedEventId("");
 
         } catch (error: any) {
@@ -356,19 +360,34 @@ export default function RegisterPage() {
                                     <label className="text-sm font-bold text-secondary flex items-center gap-2">
                                         <Upload size={16} /> Upload Payment Screenshot
                                     </label>
-                                    <div className="border-2 border-dashed border-white/20 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-accent/50 transition cursor-pointer relative">
+                                    <div className="border-2 border-dashed border-white/20 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-accent/50 transition cursor-pointer relative overflow-hidden min-h-[160px]">
                                         <input
                                             type="file"
                                             accept="image/*"
                                             onChange={handleFileChange}
-                                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                                             required
                                         />
-                                        <Upload size={32} className="text-secondary mb-2" />
-                                        <p className="text-sm text-secondary">
-                                            {paymentFile ? paymentFile.name : "Click to upload or drag & drop"}
-                                        </p>
-                                        <p className="text-xs text-secondary/60 mt-1">JPG, PNG up to 5MB</p>
+                                        {previewUrl ? (
+                                            <div className="absolute inset-0 w-full h-full z-10 flex flex-col items-center justify-center group bg-black">
+                                                <img
+                                                    src={previewUrl}
+                                                    alt="Payment Screenshot"
+                                                    className="absolute inset-0 w-full h-full object-contain transition-all duration-300 group-hover:opacity-40"
+                                                />
+                                                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <span className="bg-black/80 px-4 py-2 rounded-lg text-sm text-white font-bold backdrop-blur-sm border border-white/20 shadow-lg">Change Photo</span>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <Upload size={32} className="text-secondary mb-2 relative z-10" />
+                                                <p className="text-sm text-secondary relative z-10">
+                                                    Click to upload or drag & drop
+                                                </p>
+                                                <p className="text-xs text-secondary/60 mt-1 relative z-10">JPG, PNG up to 5MB</p>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             </div>
