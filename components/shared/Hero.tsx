@@ -224,7 +224,7 @@ export default function Hero() {
 
             {/* Floating Rule Book Button */}
             <a
-                href="https://drive.google.com/file/d/1EQ02-55T0Kn27iFBfjOtBLIO36uZMe_x/view?usp=sharing"
+                href="https://drive.google.com/file/d/1YKaweYjlPP-BJXp4zFW4YsIM7DvlqmTj/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 bg-[#EEB702] text-[#511C6A] font-heading font-bold px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 border-2 border-[#511C6A] hover:-translate-y-1 animate-bounce hover:animate-none"
