@@ -43,7 +43,7 @@ export default function LoginPage() {
                         </button>
 
                         <p className="text-center text-sm text-secondary mt-4">
-                            Don't have an account? <Link href="/register" className="text-accent hover:underline">Register</Link>
+                            Don't have an account? <Link href="/events" className="text-accent hover:underline">Register for Events</Link>
                         </p>
                     </form>
                 </div>

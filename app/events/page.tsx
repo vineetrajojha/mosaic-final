@@ -61,7 +61,7 @@ export default function EventsPage() {
                                         transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
                                         className="group relative h-[400px] rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-500 cursor-pointer"
                                     >
-                                        <Link href={`/register?eventId=${event.id}`} className="block w-full h-full">
+                                        <Link href="https://docs.google.com/forms/d/e/1FAIpQLSclCmAtdWZmJalGxt3gBj_NHXkpDEebzB3Kfe3uHtamL1gJ0Q/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                                             {/* Background Image */}
                                             <div className="absolute inset-0">
                                                 <img
